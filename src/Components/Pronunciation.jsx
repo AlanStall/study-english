@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 import './Pronunciation.css'
+import backgroundPronunciation from "../../public/rawad-semaan-unsplash.webp";
 
 export function Pronunciation() {
   
@@ -73,35 +75,37 @@ export function Pronunciation() {
       speakWord();
       console.log(words.length);
       }else{
-        setMessage(<h1 style={{color: "red"}}>Você errou. Tente novamente ou atualize a palavra.</h1>);        
+        setMessage(<h1 style={{color: "red"}}>Você errou. Tente novamente ou atualize a palavra</h1>);        
       }    
   }
 
   return (
     <>
-      <div>
+      <div id="page" style={{backgroundImage: `url(${backgroundPronunciation})`, width: "100%"}}> 
         < Header />
-        <h1>{word}</h1>
-        <h1>{spoken}</h1>
-        <br></br>
-        <button onClick={updateWord}>Atualizar</button>
-        <button onClick={listenWord} disabled={disabled} style={{ color: disabled ? 'red' : 'green' }}>Ouvir</button>
-        <button onClick={speakWord}>PRONUNCIAR</button>
-        <br></br>
-        <br></br>
-        {message} 
-        <br></br>                 
-        <br></br>
-        <hr></hr>
-        <br></br>
-        <div>
-            <h3>Monte sua lista de palavras</h3>
-            <br></br>
-            <button onClick={() => navigate("/Study-list")}>MINHA LISTA</button><br></br>            
+        <div className="image" >
+          <div className="card bg-base-100 shadow-xl card-practice">
+            <div className="display-words">
+              <button className="btn btn-outline btn-primary" onClick={updateWord}>Atualizar</button>
+              <button className="btn btn-outline btn-primary" onClick={listenWord} disabled={disabled} style={{ color: disabled ? 'red' : '' }}>Ouvir</button>
+              <button className="btn btn-outline btn-primary" onClick={speakWord}>PRONUNCIAR</button>            
+              <h1 className="word-english">{word}</h1>
+              <h1 className="word-portuguese">{spoken}</h1>
+              <p className="message">{message}</p>
+            </div>           
+            <br></br>          
+            <br></br>  
+          </div>            
         </div>
-        <br></br>
-        <hr></hr>
+        <div id="h3-button">                  
+          <h3 className="font-bold">Monte sua lista de palavras</h3>                                    
+          <button className="btn btn-success btn-start" onClick={() => navigate("/Study-list")}>MINHA LISTA</button>
+        </div>          
       </div>
+      < Footer />
     </>
   )
 }
+
+
+ 

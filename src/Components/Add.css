@@ -1,0 +1,51 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-add {
+    height: 100%;
+}
+
+.registered-message {
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 50px;
+    color: #570DF8;
+}
+
+.input-add-english {
+    position: relative;
+    height: 200px;
+    width: 80%;
+}
+
+.text-input-english {
+    position: relative;
+    margin-top: 10%;
+}
+
+.input-add-portuguese {
+    position: relative;
+    height: 400px;
+    width: 80%;
+}
+
+.text-input-portuguese {
+    position: relative;    
+    margin-top: 50px;
+}
+
+.span-inEnglish {
+    width: 20%;
+}
+
+.span-inPortuguese {
+    width: 20%;
+}
+
+.btn-cancel, .btn-add, .btn-my-list {
+    margin: 30px;
+    margin-bottom: 100px;
+}
+

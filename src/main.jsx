@@ -5,10 +5,10 @@ import Routes from "./Routes";
 import "./styles.css"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <React.StrictMode>    
     <Router >
-      <Routes />
-    </Router>
+      <Routes />      
+    </Router>    
   </React.StrictMode>
 )
 

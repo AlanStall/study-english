@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.input-02 {
+    
+    word-wrap: break-word;
+}
+
+.input-01 {
+    
+    word-wrap: break-word;
+}

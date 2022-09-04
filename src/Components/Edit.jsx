@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import { db } from "../db";
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 import './Edit.css'
 
 export function Edit() {
@@ -49,13 +50,53 @@ export function Edit() {
   }
 
   return <>
+        < Header />
+        <div className="page-add">
+            <p className="registered-message">
+            {status}
+            </p>
+            <div className="input-add-english form-control">
+                <label className="text-input-english input-group input-group-lg">
+                    <span className="span-inEnglish">Em inglês:</span>                    
+                    <input  
+                      type="text" 
+                      placeholder="Digite aqui sua palavra ou frase…" 
+                      className="input input-bordered input-lg"
+                      id="input-word-english"
+                      ref={inputEnglish}
+                      onSelect={ev=>setInEnglish(ev.target.value)}/>
+                </label>
+            </div>
+
+            <div className="input-add-portuguese form-control">
+                <label className="text-input-portuguese input-group input-group-lg">
+                    <span className="span-inPortuguese">Em português:</span>                    
+                    <input 
+                        type="text" 
+                        placeholder="Digite aqui sua palavra ou frase…" 
+                        className="input input-bordered input-lg"
+                        id="input-word-portuguese"
+                        ref={inputPortuguese}
+                        onSelect={ev => setInPortuguese(ev.target.value)}/>
+                </label>
+            </div>
+            <button className="btn btn-outline btn-error btn-cancel" onClick={() => navigate("/Study-list")}>CANCELAR</button>
+            <button className="btn btn-outline btn-success btn-add" onClick={updateWords}>CONFIRMAR</button>
+            <button className="btn btn-outline btn-info btn-my-list" onClick={() => navigate("/Study-list")}>MINHA LISTA</button>
+            
+        </div>
+        < Footer />
+  </>
+}
+
+{/* 
     <p>
       < Header />
       {status}
     </p>
     
     Palavra ou Frase: 
-    <input       
+    <textarea className="input-01"      
       ref={inputEnglish}      
       id="form-input-english" 
       type="text"      
@@ -64,7 +105,7 @@ export function Edit() {
     <br></br>
     <br></br>
     Tradução:
-    <input      
+    <textarea className="input-02"
       ref={inputPortuguese}       
       id="form-input-portuguese" 
       type="text"
@@ -80,6 +121,5 @@ export function Edit() {
     <br></br>
     <br></br>
     <hr></hr>
-    
-  </>
-}
+    <br></br>
+    < Footer /> */}

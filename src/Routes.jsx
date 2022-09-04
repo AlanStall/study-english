@@ -5,6 +5,7 @@ import { Edit } from "./Components/Edit"
 import { Home } from "./Components/Home"
 import { Pronunciation } from "./Components/Pronunciation"
 import { StudyList } from "./Components/Study-list"
+import "./styles.css"
 
 function AllRoutes() {  
 
