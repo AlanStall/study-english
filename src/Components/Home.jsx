@@ -11,7 +11,7 @@ export function Home() {
     <div className="hero min-h-screen" id="background" style={{backgroundImage: `url(${background})`, Height: "90%" }}>
       <div className="hero-overlay bg-opacity-40"></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
+        <div className="max-w-md my-16">
           <h1 className="title font-bold">STUDY ENGLISH</h1>
           <br></br>
           <button className="btn btn-primary btn-01" onClick={() => navigate("/Pronunciation")}>PRATICAR PRONÚNCIA</button>          
