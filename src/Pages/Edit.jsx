@@ -50,8 +50,8 @@ export function Edit() {
   return (
     <>
       <div className="min-h-screen">
-      <Header />
-        <p className="registered-message">{status}</p> {/* ///////////////////////////// */}
+        <Header />
+        <p className="pt-6">{status}</p>
         <div className="pt-12">
           <div className="form-control">
             <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-12">

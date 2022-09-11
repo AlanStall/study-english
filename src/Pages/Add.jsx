@@ -35,9 +35,8 @@ export function Add() {
 
   return (
     <>
-      
       <div className="min-h-screen">
-      <Header />
+        <Header />
         <p className="pt-6">{status}</p>
         <div className="pt-12">
           <div className="form-control">
@@ -79,7 +78,7 @@ export function Add() {
               onClick={() => navigate('/Study-list')}
             >
               MINHA LISTA
-            </button>          
+            </button>
           </div>
         </div>
       </div>

@@ -16,6 +16,9 @@ export function Footer() {
         >
           Contato
         </a>
+        <a className="link link-hover code" href="https://github.com/AlanStall/study-english">
+          Código Fonte
+        </a>
       </div>
 
       <div className="grid grid-flow-col gap-2">

@@ -86,7 +86,6 @@ export function Pronunciation() {
     'beautiful',
     'because',
     'become',
-    'bed',
     'before',
     'begin',
     'behavior',
@@ -251,7 +250,6 @@ export function Pronunciation() {
     'election',
     'else',
     'employee',
-    'end',
     'energy',
     'enjoy',
     'enough',
@@ -312,7 +310,6 @@ export function Pronunciation() {
     'focus',
     'follow',
     'food',
-    'foot',
     'force',
     'foreign',
     'forget',
@@ -341,7 +338,6 @@ export function Pronunciation() {
     'ground',
     'group',
     'grow',
-    'growth',
     'guess',
     'gun',
     'guy',
@@ -390,7 +386,6 @@ export function Pronunciation() {
     'impact',
     'important',
     'improve',
-    'in',
     'include',
     'including',
     'increase',
@@ -410,7 +405,6 @@ export function Pronunciation() {
     'investment',
     'involve',
     'issue',
-    'it',
     'item',
     "it's",
     'itself',
@@ -542,21 +536,17 @@ export function Pronunciation() {
     'nothing',
     'notice',
     'now',
-    "n't",
     'number',
     'occur',
-    'of',
     'off',
     'offer',
     'office',
     'officer',
     'official',
     'often',
-    'oh',
     'oil',
     'okay',
     'old',
-    'on',
     'once',
     'only',
     'onto',
@@ -588,7 +578,6 @@ export function Pronunciation() {
     'pattern',
     'peace',
     'people',
-    'per',
     'perform',
     'performance',
     'perhaps',
@@ -640,7 +629,6 @@ export function Pronunciation() {
     'prove',
     'provide',
     'public',
-    'pull',
     'purpose',
     'put',
     'quality',
@@ -874,8 +862,6 @@ export function Pronunciation() {
     'understand',
     'unit',
     'until',
-    'up',
-    'us',
     'use',
     'usually',
     'value',
@@ -927,12 +913,9 @@ export function Pronunciation() {
     'work',
     'worker',
     'world',
-    'would',
     'write',
     'wrong',
     'yard',
-    'yeah',
-    'year',
     'yes',
     'yet',
     'you',
@@ -1017,13 +1000,12 @@ export function Pronunciation() {
     <>
       <div
         className="min-h-screen"
-        id="page"
         style={{ backgroundImage: `url(${backgroundPronunciation})`, width: '100%' }}
       >
         <Header />
 
         <div className="card bg-base-100 shadow-xl m-2 p-2 h-96 sm:mx-20 sm:p-8 sm:h-80">
-          <div className="display-words">
+          <div>
             <button className="btn btn-sm btn-outline btn-primary xs:btn-md" onClick={updateWord}>
               ATUALIZAR
             </button>
@@ -1051,9 +1033,7 @@ export function Pronunciation() {
           <br></br>
           <br></br>
         </div>
-        <div
-          className="text-white py-4 xs2:pt-10 xs:pt-16 xs:text-[20px] sm:pt-32 sm:text-[24px] lg:pt-56"
-        >
+        <div className="text-white py-4 xs2:pt-10 xs:pt-16 xs:text-[20px] sm:pt-32 sm:text-[24px] lg:pt-56">
           <h3 className="font-bold">Monte sua lista de palavras</h3>
           <button
             className="btn btn-success btn-start xs2:m-4 xs:mt-4 sm:m-6"
@@ -1061,7 +1041,7 @@ export function Pronunciation() {
           >
             MINHA LISTA
           </button>
-        </div> 
+        </div>
       </div>
       <Footer />
     </>

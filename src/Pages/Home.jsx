@@ -8,7 +8,6 @@ export function Home() {
   return (
     <div
       className="hero min-h-screen"
-      id="background"
       style={{ backgroundImage: `url(${background})`, height: '100%', width: '100%' }}
     >
       <div className="hero-overlay bg-opacity-40"></div>
@@ -23,7 +22,7 @@ export function Home() {
             onClick={() => navigate('/Pronunciation')}
           >
             PRATICAR PRONÚNCIA
-          </button>          
+          </button>
         </div>
       </div>
     </div>

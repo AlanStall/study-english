@@ -14,7 +14,6 @@ module.exports = {
       'lg': '1024px',
       'xl': '1280px',
       '2xl': '1536px',
-      'h-min': `@media (min-height: 500px)`
     },
     fontSize: {
       'xxs': '0.50rem',
