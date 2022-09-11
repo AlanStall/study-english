@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
-import './Pronunciation.css';
 import backgroundPronunciation from '../../src/rawad-semaan-unsplash.webp';
 
 export function Pronunciation() {
@@ -1042,9 +1041,9 @@ export function Pronunciation() {
             <p className="text-[14px] font-bold p-2 xs2:text-[24px] xs2:p-4 sm:text-[28px]">
               {word}
             </p>
-            <h1 className="text-[14px] font-bold p-2 xs2:text-[20px] xs2:p-4 sm:text-[24px]">
+            <p className="text-[14px] font-bold p-2 xs2:text-[20px] xs2:p-4 sm:text-[24px]">
               {spoken}
-            </h1>
+            </p>
             <p className="text-[14px] font-bold p-2 xs2:text-[16px] xs2:p-4 md:text-[18px]">
               {message}
             </p>
@@ -1052,14 +1051,8 @@ export function Pronunciation() {
           <br></br>
           <br></br>
         </div>
-
         <div
-          className="text-white py-4 xs2:pt-10 xs:pt-16 xs:text-[20px] sm:pt-32 sm:text-[24px] lg:pt-56
-        
-        
-        
-        
-        "
+          className="text-white py-4 xs2:pt-10 xs:pt-16 xs:text-[20px] sm:pt-32 sm:text-[24px] lg:pt-56"
         >
           <h3 className="font-bold">Monte sua lista de palavras</h3>
           <button
@@ -1068,7 +1061,7 @@ export function Pronunciation() {
           >
             MINHA LISTA
           </button>
-        </div>
+        </div> 
       </div>
       <Footer />
     </>

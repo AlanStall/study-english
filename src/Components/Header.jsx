@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Header.css';
+
 import backgroundHeader from '../../src/rawad-semaan-unsplash.webp';
 
 export function Header() {

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../db';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
-import './Study-list.css';
 import backgroundMyList from "../../src/rawad-semaan-unsplash.webp";
 
 export function StudyList() {
@@ -221,7 +220,7 @@ export function StudyList() {
   return (
     <>
       <section
-        className="pb-0.5 xs:pb-6"
+        className=" min-h-screen pb-0.5 xs:pb-6"
         style={{ backgroundImage: `url(${backgroundMyList})`, width: '100%' }}
       >
         <Header />

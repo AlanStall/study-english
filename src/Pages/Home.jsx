@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Home.css';
 import background from '../../src/chris-dickens-unsplash-0.webp';
 
 export function Home() {
@@ -24,13 +23,7 @@ export function Home() {
             onClick={() => navigate('/Pronunciation')}
           >
             PRATICAR PRONÚNCIA
-          </button>
-          <button
-            className="btn btn-primary m-2 text-[10px] w-20 xxs:w-32 xxs:text-[12px] xs:w-64 xs:text-[14px] sm:text-[16px]"
-            onClick={() => navigate('/Study-list')}
-          >
-            MINHA LISTA
-          </button>
+          </button>          
         </div>
       </div>
     </div>

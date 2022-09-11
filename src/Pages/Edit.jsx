@@ -4,7 +4,6 @@ import { useRef, useEffect } from 'react';
 import { db } from '../db';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
-import './Edit.css';
 
 export function Edit() {
   const [record, setRecord] = useState({});
@@ -50,49 +49,51 @@ export function Edit() {
 
   return (
     <>
+      <div className="min-h-screen">
       <Header />
-      <div className="min-h-screen relative top-[50px]">
         <p className="registered-message">{status}</p> {/* ///////////////////////////// */}
-        <div className="form-control">
-          <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-12">
-            <span className="p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">Em inglês:</span>
-            <textarea
-              type="text"
-              placeholder="Digite aqui sua palavra ou frase…"
-              className="input input-bordered input-lg h-20 p-1 w-3/4 sm:p-2"
-              ref={inputEnglish}
-              onSelect={(ev) => setInEnglish(ev.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form-control">
-          <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-12">
-            <span className="p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">Em português:</span>
-            <textarea
-              type="text"
-              placeholder="Digite aqui sua palavra ou frase…"
-              className="input input-bordered input-lg h-20 p-1 w-3/4 sm:p-2"
-              ref={inputPortuguese}
-              onSelect={(ev) => setInPortuguese(ev.target.value)}
-            />
-          </label>
-        </div>
-        <div className="relative top-[50px]">
-          <button
-            className="btn btn-outline btn-error m-2 p-2"
-            onClick={() => navigate('/Study-list')}
-          >
-            CANCELAR
-          </button>
-          <button className="btn btn-outline btn-success m-2 p-2" onClick={updateWords}>
-            CONFIRMAR
-          </button>
-          <button
-            className="btn btn-outline btn-info m-2 p-2"
-            onClick={() => navigate('/Study-list')}
-          >
-            MINHA LISTA
-          </button>
+        <div className="pt-12">
+          <div className="form-control">
+            <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-12">
+              <span className="p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">Em inglês:</span>
+              <textarea
+                type="text"
+                placeholder="Digite aqui sua palavra ou frase…"
+                className="input input-bordered input-lg h-20 p-1 w-3/4 sm:p-2"
+                ref={inputEnglish}
+                onSelect={(ev) => setInEnglish(ev.target.value)}
+              />
+            </label>
+          </div>
+          <div className="form-control">
+            <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-12">
+              <span className="p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">Em português:</span>
+              <textarea
+                type="text"
+                placeholder="Digite aqui sua palavra ou frase…"
+                className="input input-bordered input-lg h-20 p-1 w-3/4 sm:p-2"
+                ref={inputPortuguese}
+                onSelect={(ev) => setInPortuguese(ev.target.value)}
+              />
+            </label>
+          </div>
+          <div className="p-6">
+            <button
+              className="btn btn-outline btn-error m-2 p-2"
+              onClick={() => navigate('/Study-list')}
+            >
+              CANCELAR
+            </button>
+            <button className="btn btn-outline btn-success m-2 p-2" onClick={updateWords}>
+              CONFIRMAR
+            </button>
+            <button
+              className="btn btn-outline btn-info m-2 p-2"
+              onClick={() => navigate('/Study-list')}
+            >
+              MINHA LISTA
+            </button>
+          </div>
         </div>
       </div>
       <Footer />
