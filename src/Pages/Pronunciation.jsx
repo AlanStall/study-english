@@ -979,7 +979,7 @@ export function Pronunciation() {
   let nextWord = '';
   async function check(transcript) {
     if (word === transcript || nextWord === transcript) {
-      setMessage(<h1 style={{ color: 'blue' }}>Você acertou!!!</h1>);
+      setMessage("Você acertou!!!");
       await sleep(2000);
       nextWord = randomWord();
       setWord(nextWord);
