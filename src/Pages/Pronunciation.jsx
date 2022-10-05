@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
-import backgroundPronunciation from '../../src/rawad-semaan-unsplash.webp';
 
 export function Pronunciation() {
   const navigate = useNavigate();
@@ -979,7 +978,7 @@ export function Pronunciation() {
   let nextWord = '';
   async function check(transcript) {
     if (word === transcript || nextWord === transcript) {
-      setMessage("Você acertou!!!");
+      setMessage('Você acertou!!!');
       await sleep(2000);
       nextWord = randomWord();
       setWord(nextWord);
@@ -999,8 +998,7 @@ export function Pronunciation() {
   return (
     <>
       <div
-        className="min-h-screen"
-        style={{ backgroundImage: `url(${backgroundPronunciation})`, width: '100%' }}
+        className="min-h-screen"        
       >
         <Header />
 

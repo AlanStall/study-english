@@ -1,14 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import backgroundHeader from '../../src/rawad-semaan-unsplash.webp';
-
 export function Header() {
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="" style={{ backgroundImage: `url(${backgroundHeader})` }}>
+      <div>
         <button
           className="
         btn btn-xs btn-success my-1        

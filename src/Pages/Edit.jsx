@@ -41,7 +41,7 @@ export function Edit() {
         inPortuguese
       });
 
-      navigate('/Study-list');
+      navigate('/ListRecords');
     } catch (error) {
       setStatus(`Failed to add ${inEnglish}: ${error}`);
     }
@@ -59,7 +59,7 @@ export function Edit() {
               <textarea
                 type="text"
                 placeholder="Digite aqui sua palavra ou frase…"
-                className="input input-bordered input-lg h-20 p-1 w-3/4 sm:p-2"
+                className="input input-bordered input-lg min-h-[80px] p-1 w-3/4 sm:p-2"
                 ref={inputEnglish}
                 onSelect={(ev) => setInEnglish(ev.target.value)}
               />
@@ -71,32 +71,34 @@ export function Edit() {
               <textarea
                 type="text"
                 placeholder="Digite aqui sua palavra ou frase…"
-                className="input input-bordered input-lg h-20 p-1 w-3/4 sm:p-2"
+                className="input input-bordered input-lg min-h-[80px] p-1 w-3/4 sm:p-2"
                 ref={inputPortuguese}
                 onSelect={(ev) => setInPortuguese(ev.target.value)}
               />
             </label>
           </div>
-          <div className="p-6">
-            <button
-              className="btn btn-outline btn-error m-2 p-2"
-              onClick={() => navigate('/Study-list')}
-            >
-              CANCELAR
-            </button>
+          <div className="p-6">            
             <button className="btn btn-outline btn-success m-2 p-2" onClick={updateWords}>
               CONFIRMAR
             </button>
             <button
+              className="btn btn-outline btn-error m-2 p-2"
+              onClick={() => navigate('/ListRecords')}
+            >
+              CANCELAR
+            </button>
+            <button
               className="btn btn-outline btn-info m-2 p-2"
-              onClick={() => navigate('/Study-list')}
+              onClick={() => navigate('/ListRecords')}
             >
               MINHA LISTA
             </button>
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="tall:absolute inset-x-0 bottom-0">
+        <Footer />
+      </div>
     </>
   );
 }

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../db';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
-import backgroundMyList from '../../src/rawad-semaan-unsplash.webp';
 
 export function StudyList() {
   const [wordsRandom, setWordsRandom] = useState('');
@@ -15,7 +14,8 @@ export function StudyList() {
   const [translateNotRandom, setTranslateNotRandom] = useState(false);
   const [translateRandom, setTranslateRandom] = useState(false);
   const [wordByWord, setWordByWord] = useState([]);
-  const [displayRecords, setDisplayRecords] = useState('');
+  const [displayRecords, setDisplayRecords] = useState('');  
+  const [allWords, setallWords] = useState(false);
 
   const navigate = useNavigate();
 
@@ -210,18 +210,29 @@ export function StudyList() {
         if (object.id === translate.id) {
           return {
             ...object,
-            toShow: !translate.toShow
-          };
-        } else return object;
-      })
+            toShow: !translate.toShow            
+          };          
+        } else return object
+      })      
     );
   }
+
+  
+  /* function showAllWords(){
+    setallWords(true);
+
+    let todos = [...wordByWord.inPortuguese];
+    setToShowAll(todos);
+
+    const data =[...wordsPhrases];
+    setToShowAll(data.map((d) => <li key={d.id}>{d.inPortuguese}</li>));
+    
+  } */
 
   return (
     <>
       <section
-        className=" min-h-screen pb-0.5 xs:pb-6"
-        style={{ backgroundImage: `url(${backgroundMyList})`, width: '100%' }}
+        className=" min-h-screen pb-0.5 xs:pb-6"        
       >
         <Header />
 
@@ -392,38 +403,66 @@ export function StudyList() {
       </section>
 
       <section>
-        <h1 className="font-bold text-[14px] text-[#570DF8] py-6 ">LISTA COMPLETA</h1>
-        <div className="overflow-x-auto bg-gray-300 rounded-t-xl py-3 pb-6 p-1 sm:pt-3 sm:p-8">
+        <h1 className="font-bold text-[#ffffff] py-4 text-[14px] sm:text-[18px]">LISTA COMPLETA</h1>
+        <div className="overflow-x-auto bg-gray-300 rounded-xl py-3 pb-6 p-1 sm:pt-0 sm:p-8">
           <table className="table-fixed w-full shadow-xl">
             <thead className="p-3">
               <tr>
-                <th className="pb-3 text-[#570DF8] font-bold text-[10px] xs:text-[12px]">
+                <th className="pb-0 text-[#570DF8] font-bold text-[10px] xs:text-[12px]">
                   EM INGLÊS
                 </th>
-                <th className="pb-3 text-[#570DF8] font-bold text-[10px] xs:text-[12px]">
+                <th className="pb-[20px] text-[#570DF8] font-bold text-[10px] xs:text-[12px]">
                   EM PORTUGUÊS
+                  <button
+                      className="btn-outline btn-primary relative left-[10px] top-[9px] m-0 p-1 rounded"
+                      id="icon-translation"
+                      data-theme="light"
+                      onClick={() => setallWords(!allWords)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25px"
+                      height="30px"
+                      viewBox="800 795 200 200"
+                      className="fill-current h-5 m-px xs:h-7"
+                    >
+                      <path d="M973.166,818.5H818.833c-12.591,0-22.833,10.243-22.833,22.833v109.333c0,12.59,10.243,22.833,22.833,22.833h154.333c12.59,0,22.834-10.243,22.834-22.833V841.333C996,828.743,985.756,818.5,973.166,818.5z M896,961.5h-77.167c-5.973,0-10.833-4.859-10.833-10.833V841.333c0-5.974,4.86-10.833,10.833-10.833H896V961.5z M978.58,872.129c-0.547,9.145-5.668,27.261-20.869,39.845c4.615,1.022,9.629,1.573,14.92,1.573v12c-10.551,0-20.238-1.919-28.469-5.325c-7.689,3.301-16.969,5.325-28.125,5.325v-12c5.132,0,9.924-0.501,14.366-1.498c-8.412-7.016-13.382-16.311-13.382-26.78h11.999c0,8.857,5.66,16.517,14.884,21.623c4.641-2.66,8.702-6.112,12.164-10.351c5.628-6.886,8.502-14.521,9.754-20.042h-49.785v-12h22.297v-11.986h12V864.5h21.055c1.986,0,3.902,0.831,5.258,2.28C977.986,868.199,978.697,870.155,978.58,872.129z" />
+                      <path d="M839.035,914.262l-4.45,11.258h-15.971l26.355-61.09h15.971l25.746,61.09h-16.583l-4.363-11.258H839.035zM852.475,879.876l-8.902,22.604h17.629L852.475,879.876z" />
+                    </svg>
+                  </button>
                 </th>
                 <th className="pb-3 sm:w-3/12 md:w-2/12"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody data-theme="light">
               {wordByWord?.map((word) => (
                 <tr className="bg-white hover:bg-gray-100" key={word.id}>
                   <td className="border-solid border-2 break-words p-0.5 text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
-                    {word.inEnglish}
+                    {word.inEnglish}                    
                   </td>
-
-                  <td className="border-solid border-2">
-                    {word.toShow && (
+                  <td className="border-solid border-2">                   
+                    {
+                      !allWords && (word.toShow === true 
+                        ?
+                        <a className="break-words p-0.5 text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
+                          {word.inPortuguese === undefined ? '' : word.inPortuguese}
+                        </a>
+                        : ""
+                        )
+                      ||
+                      allWords && (word.toShow === false 
+                      ? 
                       <a className="break-words p-0.5 text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
                         {word.inPortuguese === undefined ? '' : word.inPortuguese}
                       </a>
-                    )}
+                      : ""
+                      )
+                    }
                   </td>
-                  <td className="buttons-line border-solid border-2">
+                  <td className="buttons-line border-solid border-2">                  
                     <button
-                      className="btn-outline relative top-[4px] m-0 p-0"
-                      style={{ borderRadius: '5px' }}
+                      className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
+                      id="icon-translation"
                       onClick={() => showEachWord(word)}
                     >
                       <svg
@@ -438,8 +477,8 @@ export function StudyList() {
                       </svg>
                     </button>
                     <button
-                      className="btn-outline relative top-[4px] m-0 p-0"
-                      style={{ borderRadius: '5px' }}
+                      className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
+                      id="icon-edit"                      
                       onClick={() => navigate(`/Edit/${word.id}`)}
                     >
                       <svg
@@ -453,8 +492,8 @@ export function StudyList() {
                       </svg>
                     </button>
                     <button
-                      className="btn-outline relative top-[4px] m-0 p-0"
-                      style={{ borderRadius: '5px' }}
+                      className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
+                      id="icon-delete"                      
                       onClick={() => deleteEachWord(word)}
                     >
                       <svg
