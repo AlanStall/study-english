@@ -1,5 +1,5 @@
 import React from 'react';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export function Footer() {
   return (
@@ -8,23 +8,42 @@ export function Footer() {
       className="footer footer-center gap-2 py-4 xs2:p-4 bg-base-200 text-base-content rounded"
     >
       <div className="grid grid-flow-col gap-4">
-        <a className="link link-hover hover:text-[#b192f3]" target="_blank" href="https://github.com/AlanStall">
+        <a
+          className="link link-hover hover:text-[#b192f3]"
+          target="_blank"
+          href="https://github.com/AlanStall"
+        >
           Desenvolvedor
         </a>
-        <a className="link link-hover hover:text-[#b192f3]" target="_blank" href="https://www.linkedin.com/in/alan-stall-b722a962/">
+        <a
+          className="link link-hover hover:text-[#b192f3]"
+          target="_blank"
+          href="https://www.linkedin.com/in/alan-stall-b722a962/"
+        >
           Contato
         </a>
-        <a className="link link-hover hover:text-[#b192f3]" target="_blank" href="https://github.com/AlanStall/study-english">
+        <a
+          className="link link-hover hover:text-[#b192f3]"
+          target="_blank"
+          href="https://github.com/AlanStall/study-english"
+        >
           Código Fonte
         </a>
-        <a className="link link-hover hover:text-[#b192f3]" target="_blank" href="/Alan_Stall-Curriculo-2022.pdf">
+        <a
+          className="link link-hover hover:text-[#b192f3]"
+          target="_blank"
+          href="/Alan_Stall-Curriculo-2022.pdf"
+        >
           Currículo
         </a>
       </div>
 
       <div className="grid grid-flow-col gap-2">
         <a href="https://github.com/AlanStall" target="_blank" title="GitHub">
-          <button className="btn-outline rounded-md fill-[#b192f3] hover:fill-[#171515]" aria-label="GitHub">
+          <button
+            className="btn-outline rounded-md fill-[#b192f3] hover:fill-[#171515]"
+            aria-label="GitHub"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="38"
@@ -37,7 +56,10 @@ export function Footer() {
           </button>
         </a>
         <a href="https://www.linkedin.com/in/alan-stall-b722a962/" target="_blank" title="LinkedIn">
-          <button className="btn-outline rounded-md fill-[#b192f3] hover:fill-[#0A66C2]" aria-label="LinkedIn"> {/* #171515 Hex Color Code, RGB and Paints */ }
+          <button
+            className="btn-outline rounded-md fill-[#b192f3] hover:fill-[#0A66C2]"
+            aria-label="LinkedIn"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="35"
@@ -53,7 +75,7 @@ export function Footer() {
 
       <div className="info">
         <div className="grid grid-flow-col gap-1">
-          <p className="e-mail">e-mail: alan_kstall@hotmail.com</p>
+          <p className="e-mail">alan_kstall@hotmail.com</p>
           <CopyToClipboard text="alan_kstall@hotmail.com">
             <button className="btn btn-outline btn-sm mt-3 xs:btn-xs xs:mt-0">Copiar e-mail</button>
           </CopyToClipboard>

@@ -14,7 +14,7 @@ export function StudyList() {
   const [translateNotRandom, setTranslateNotRandom] = useState(false);
   const [translateRandom, setTranslateRandom] = useState(false);
   const [wordByWord, setWordByWord] = useState([]);
-  const [displayRecords, setDisplayRecords] = useState('');  
+  const [displayRecords, setDisplayRecords] = useState('');
   const [allWords, setallWords] = useState(false);
 
   const navigate = useNavigate();
@@ -210,14 +210,13 @@ export function StudyList() {
         if (object.id === translate.id) {
           return {
             ...object,
-            toShow: !translate.toShow            
-          };          
-        } else return object
-      })      
+            toShow: !translate.toShow
+          };
+        } else return object;
+      })
     );
   }
 
-  
   /* function showAllWords(){
     setallWords(true);
 
@@ -231,9 +230,7 @@ export function StudyList() {
 
   return (
     <>
-      <section
-        className=" min-h-screen pb-0.5 xs:pb-6"        
-      >
+      <section className=" min-h-screen pb-0.5 xs:pb-6">
         <Header />
 
         <div className="card bg-base-100 shadow-xl m-2 xs2:my-4 xs2:py-4 sm:mx-10 lg:mx-32">
@@ -414,10 +411,10 @@ export function StudyList() {
                 <th className="pb-[20px] text-[#570DF8] font-bold text-[10px] xs:text-[12px]">
                   EM PORTUGUÊS
                   <button
-                      className="btn-outline btn-primary relative left-[10px] top-[9px] m-0 p-1 rounded"
-                      id="icon-translation"
-                      data-theme="light"
-                      onClick={() => setallWords(!allWords)}
+                    className="btn-outline btn-primary relative left-[10px] top-[9px] m-0 p-1 rounded"
+                    id="icon-translation"
+                    data-theme="light"
+                    onClick={() => setallWords(!allWords)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -438,28 +435,27 @@ export function StudyList() {
               {wordByWord?.map((word) => (
                 <tr className="bg-white hover:bg-gray-100" key={word.id}>
                   <td className="border-solid border-2 break-words p-0.5 text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
-                    {word.inEnglish}                    
+                    {word.inEnglish}
                   </td>
-                  <td className="border-solid border-2">                   
-                    {
-                      !allWords && (word.toShow === true 
-                        ?
+                  <td className="border-solid border-2">
+                    {(!allWords &&
+                      (word.toShow === true ? (
                         <a className="break-words p-0.5 text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
                           {word.inPortuguese === undefined ? '' : word.inPortuguese}
                         </a>
-                        : ""
-                        )
-                      ||
-                      allWords && (word.toShow === false 
-                      ? 
-                      <a className="break-words p-0.5 text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
-                        {word.inPortuguese === undefined ? '' : word.inPortuguese}
-                      </a>
-                      : ""
-                      )
-                    }
+                      ) : (
+                        ''
+                      ))) ||
+                      (allWords &&
+                        (word.toShow === false ? (
+                          <a className="break-words p-0.5 text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
+                            {word.inPortuguese === undefined ? '' : word.inPortuguese}
+                          </a>
+                        ) : (
+                          ''
+                        )))}
                   </td>
-                  <td className="buttons-line border-solid border-2">                  
+                  <td className="buttons-line border-solid border-2">
                     <button
                       className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
                       id="icon-translation"
@@ -478,7 +474,7 @@ export function StudyList() {
                     </button>
                     <button
                       className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
-                      id="icon-edit"                      
+                      id="icon-edit"
                       onClick={() => navigate(`/Edit/${word.id}`)}
                     >
                       <svg
@@ -493,7 +489,7 @@ export function StudyList() {
                     </button>
                     <button
                       className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
-                      id="icon-delete"                      
+                      id="icon-delete"
                       onClick={() => deleteEachWord(word)}
                     >
                       <svg

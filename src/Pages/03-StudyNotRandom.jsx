@@ -5,27 +5,23 @@ import { db } from '../db';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
 
-export function StudyNotRandom() {  
+export function StudyNotRandom() {
   const [wordsNotRandom, setWordsNotRandom] = useState('');
-  const [index, setIndex] = useState(0);  
+  const [index, setIndex] = useState(0);
   const [DisabledNotRandom, setDisabledNotRandom] = useState(false);
-  const [translateNotRandom, setTranslateNotRandom] = useState(false);    
+  const [translateNotRandom, setTranslateNotRandom] = useState(false);
   const [displayRecords, setDisplayRecords] = useState('');
   const [mostrarAlert, setMostrarAlert] = useState(false);
-  const [mensagemDelete, setMensagemDelete] = useState("");
+  const [mensagemDelete, setMensagemDelete] = useState('');
 
   const navigate = useNavigate();
 
   const wordsPhrases = useLiveQuery(async () => {
     const wordsPhrases = await db.wordsAndPhrases.toArray();
-        
+
     setWordsNotRandom(() => (wordsPhrases[0] === undefined ? '' : wordsPhrases[0]));
     setIndex(1);
-    setDisplayRecords(wordsPhrases.length);    
-    
-    
-
-
+    setDisplayRecords(wordsPhrases.length);
 
     /* for(let i = 0; i < wordsPhrases.length; i++){        
         console.log(`${i+1}. ${wordsPhrases[i].inEnglish}`)
@@ -35,11 +31,6 @@ export function StudyNotRandom() {
             console.log(i);
         }
       } */
-      
-      
-      
-
-
 
     /* let teste = wordsPhrases.findIndex(checkCurrentIndex);
     let teste03 = wordsPhrases.map((element, key)=> );
@@ -51,43 +42,26 @@ export function StudyNotRandom() {
     console.log(teste);
     console.log(teste02); */
 
-
     /* const array1 = wordsPhrases */
     /* const wordsPhrases02 = await db.wordsAndPhrases.toArray();
     const isLargeNumber = (element) => element === "caderno"; */
     /* console.log(wordsPhrases02.findIndex(isLargeNumber)+1); */
-    
+
     /* const array2 = wordsPhrases.inEnglish[2]; */
     /* console.log(array2.findIndex(isLargeNumber2)+1);   */
-
 
     /* const array1 = [5, 12, 8, 130, 44, , , , , 50, , , ,26];
     const isLargeNumber2 = (element) => element === 26;
     console.log(array1.findIndex(isLargeNumber2)+1); */
-    
-    
-
 
     /* console.log(wordsPhrases.inEnglish); */
     /* console.log(wordsPhrases02.findIndex(isLargeNumber)); */
 
-
-
-
-
-
-
-    
-
     return wordsPhrases;
   });
 
-
-  
   /* console.log(wordsPhrases[index-1].inEnglish); */
 
-
-  
   function sleep(ms) {
     return new Promise((result) => setTimeout(result, ms));
   }
@@ -102,14 +76,14 @@ export function StudyNotRandom() {
       .equals(word.id)
       .delete()
       .then(function (deleteCount) {
-        alert("Foi deletado" + deleteCount + " item: " + word.inEnglish);
+        alert('Foi deletado' + deleteCount + ' item: ' + word.inEnglish);
         setMostrarAlert(!mostrarAlert);
       });
   }
 
-  function alertDelete(){
+  function alertDelete() {
     setMostrarAlert(true);
-    setMensagemDelete("Você tem certeza que quer deleter este item?");
+    setMensagemDelete('Você tem certeza que quer deleter este item?');
   }
 
   function findWordByNumber() {
@@ -214,26 +188,21 @@ export function StudyNotRandom() {
     }
   }
 
-  const handleKeyPressInputNumber = e => {
-    if (e.key === "Enter") {
-        findNumberAndClearInput();
+  const handleKeyPressInputNumber = (e) => {
+    if (e.key === 'Enter') {
+      findNumberAndClearInput();
     }
   };
 
-  
-
-  
   return (
     <>
-      <section
-        className="min-h-screen min-w-[100%] pb-0.5 xs:pb-6"        
-      >
+      <section className="min-h-screen min-w-[100%] pb-0.5 xs:pb-6">
         <Header />
 
-        <div className="card bg-base-100 shadow-xl m-2 xs2:my-4 xs2:py-4 sm:mx-10 lg:mx-32">
+        <div className="card bg-base-100 shadow-xl m-2 tracking-wider xs2:my-4 xs2:py-4 sm:mx-10 lg:mx-32">
           <div>
             <h2 className="font-bold text-[14px] xs:text-[24px]">MINHA LISTA</h2>
-            <p className="text-[10px] xs:text-[14px] xs:font-bold">{`Palavras registradas:`}</p>
+            <p className="text-[10px] xs:text-[14px] xs:font-bold">{`Itens adicionados:`}</p>
             <p className="font-bold text-[#570DF8] text-[12px] xs:text-[16px] sm:text-[20px] lg:text-[24px]">{`${displayRecords}`}</p>
             <h4 className="text-[10px] xs:text-[14px] xs:font-bold lg:text-[16px]">
               Veja cada palavra de forma crescente ou decrescente:
@@ -269,32 +238,53 @@ export function StudyNotRandom() {
                 </button>
               </div>
             </div>
-            
+
             <h2 className="font-bold text-[12px] m-2 xs:text-[16px] lg:text-[24px]">
               {wordsNotRandom.inEnglish === undefined ? '' : wordsNotRandom.inEnglish}
-              {translateNotRandom && ( 
+              {translateNotRandom && (
                 <a>
                   {wordsNotRandom.inPortuguese === undefined
                     ? ''
                     : ' - ' + wordsNotRandom.inPortuguese}
-                </a>                
-              )}              
+                </a>
+              )}
             </h2>
-            { 
-            mostrarAlert && 
-            <div className="flex justify-center m-8">
+            {mostrarAlert && (
+              <div className="flex justify-center m-8">
                 <div className="alert shadow-lg bg-gray-200 w-9/12">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span className='text-[blue]'>{mensagemDelete}</span>
-                    </div>
-                    <div className="flex-none">
-                        <button className="btn btn-sm btn-primary" onClick={() => setMostrarAlert(!mostrarAlert)}>Cancel</button>
-                        <button className="btn btn-sm btn-primary" onClick={() => deleteWords(wordsNotRandom)}>Confirm</button>
-                    </div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      className="stroke-info flex-shrink-0 w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                    <span className="text-[blue]">{mensagemDelete}</span>
+                  </div>
+                  <div className="flex-none">
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={() => setMostrarAlert(!mostrarAlert)}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={() => deleteWords(wordsNotRandom)}
+                    >
+                      Confirm
+                    </button>
+                  </div>
                 </div>
-            </div>
-            }            
+              </div>
+            )}
             <div>
               <button
                 className="btn btn-xs h-8 btn-outline btn-primary xs2:h-6 lg:btn-md"
@@ -317,7 +307,7 @@ export function StudyNotRandom() {
               <button
                 className="btn btn-xs btn-outline btn-primary lg:btn-md"
                 onClick={listenWordUserNotRandom}
-                disabled={DisabledNotRandom}                
+                disabled={DisabledNotRandom}
               >
                 Ouvir
               </button>
@@ -348,28 +338,14 @@ export function StudyNotRandom() {
             </div>
           </div>
         </div>
-
-
-        
-
-
-
-
-
       </section>
-      
-    <div className="tall:absolute inset-x-0 bottom-0">
+
+      <div className="tall:absolute inset-x-0 bottom-0">
         <Footer />
-    </div>
+      </div>
     </>
   );
 }
-
-
-
-
-
-
 
 /* import React, { useState } from "react";
 import "./style.css";

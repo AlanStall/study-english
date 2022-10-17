@@ -35,7 +35,7 @@ export function Edit() {
 
   async function updateWords() {
     try {
-      // Edit the new word/phrase!
+      // Edit word/phrase!
       const updateWords = await db.wordsAndPhrases.update(parseInt(id), {
         inEnglish,
         inPortuguese
@@ -54,8 +54,10 @@ export function Edit() {
         <p className="pt-6">{status}</p>
         <div className="pt-12">
           <div className="form-control">
-            <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-12">
-              <span className="p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">Em inglês:</span>
+            <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-8">
+              <span className="font-bold text-[18px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
+                Em inglês:
+              </span>
               <textarea
                 type="text"
                 placeholder="Digite aqui sua palavra ou frase…"
@@ -66,8 +68,10 @@ export function Edit() {
             </label>
           </div>
           <div className="form-control">
-            <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-12">
-              <span className="p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">Em português:</span>
+            <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-8">
+              <span className="font-bold text-[18px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
+                Em português:
+              </span>
               <textarea
                 type="text"
                 placeholder="Digite aqui sua palavra ou frase…"
@@ -77,7 +81,7 @@ export function Edit() {
               />
             </label>
           </div>
-          <div className="p-6">            
+          <div className="p-6">
             <button className="btn btn-outline btn-success m-2 p-2" onClick={updateWords}>
               CONFIRMAR
             </button>

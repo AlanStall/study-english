@@ -5,8 +5,8 @@ import { db } from '../db';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
 
-export function ListRecords() {  
-  const [index, setIndex] = useState(0);  
+export function ListRecords() {
+  const [index, setIndex] = useState(0);
   const [wordByWord, setWordByWord] = useState([]);
   const [displayRecords, setDisplayRecords] = useState('');
   const [disabled, setDisabled] = useState(false);
@@ -17,7 +17,7 @@ export function ListRecords() {
   const wordsPhrases = useLiveQuery(async () => {
     const wordsPhrases = await db.wordsAndPhrases.toArray();
 
-    setWordByWord(wordsPhrases);    
+    setWordByWord(wordsPhrases);
     setIndex(1);
     setDisplayRecords(wordsPhrases.length);
     return wordsPhrases;
@@ -47,10 +47,10 @@ export function ListRecords() {
         if (object.id === translate.id) {
           return {
             ...object,
-            toShow: !translate.toShow            
-          };          
-        } else return object
-      })      
+            toShow: !translate.toShow
+          };
+        } else return object;
+      })
     );
   }
 
@@ -72,10 +72,14 @@ export function ListRecords() {
       </section>
 
       <section>
-        <h1 className="font-bold text-[#ffffff] py-4 text-[14px] sm:text-[18px]">LISTA COMPLETA</h1>
-        <h1 className="font-bold text-[#ffffff] pb-4 text-[14px] sm:text-[18px]">Itens cadastrados: {displayRecords}</h1>
+        <h1 className="font-bold text-[#ffffff] py-4 tracking-[.20em] text-[14px] sm:text-[18px]">
+          LISTA COMPLETA
+        </h1>
+        <h1 className="font-bold text-[#ffffff] pb-4 tracking-widest text-[14px] sm:text-[18px]">
+          Itens adicionados: {displayRecords}
+        </h1>
         <div className="overflow-x-auto bg-gray-300 rounded-xl py-3 pb-6 p-1 sm:pt-0 sm:p-8">
-          <table className="table-fixed w-full shadow-xl">
+          <table className="table-fixed w-full shadow-xl tracking-wide">
             <thead className="p-3">
               <tr>
                 <th className="pb-0 text-[#570DF8] font-bold text-[10px] xs:text-[12px]">
@@ -84,10 +88,10 @@ export function ListRecords() {
                 <th className="pb-[20px] text-[#570DF8] font-bold text-[10px] xs:text-[12px]">
                   EM PORTUGUÊS
                   <button
-                      className="btn-outline btn-primary relative left-[10px] top-[9px] m-0 p-1 rounded"
-                      id="icon-translation"
-                      data-theme="light"
-                      onClick={() => setAllWords(!allWords)}
+                    className="btn-outline btn-primary relative left-[10px] top-[9px] m-0 p-1 rounded"
+                    id="icon-translation"
+                    data-theme="light"
+                    onClick={() => setAllWords(!allWords)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -108,28 +112,27 @@ export function ListRecords() {
               {wordByWord?.map((word) => (
                 <tr className="bg-gray-100 hover:bg-gray-300" key={word.id}>
                   <td className="border-solid border-2 break-words p-1 leading-relaxed text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
-                    {word.inEnglish}                    
+                    {word.inEnglish}
                   </td>
-                  <td className="border-solid border-2 p-1 leading-snug">                   
-                    {
-                      !allWords && (word.toShow === true 
-                        ?
+                  <td className="border-solid border-2 p-1 leading-snug">
+                    {(!allWords &&
+                      (word.toShow === true ? (
                         <a className="break-words text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
                           {word.inPortuguese === undefined ? '' : word.inPortuguese}
                         </a>
-                        : ""
-                        )
-                      ||
-                      allWords && (word.toShow === false 
-                      ? 
-                      <a className="break-words text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
-                        {word.inPortuguese === undefined ? '' : word.inPortuguese}
-                      </a>
-                      : ""
-                      )
-                    }
+                      ) : (
+                        ''
+                      ))) ||
+                      (allWords &&
+                        (word.toShow === false ? (
+                          <a className="break-words text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
+                            {word.inPortuguese === undefined ? '' : word.inPortuguese}
+                          </a>
+                        ) : (
+                          ''
+                        )))}
                   </td>
-                  <td className="buttons-line border-solid border-2">                  
+                  <td className="buttons-line border-solid border-2">
                     <button
                       className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
                       id="icon-translation"
@@ -149,7 +152,7 @@ export function ListRecords() {
                     <button
                       className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
                       id="icon-translation"
-                      disabled={disabled}                      
+                      disabled={disabled}
                       onClick={() => listenWord(word)}
                     >
                       <svg
@@ -158,18 +161,21 @@ export function ListRecords() {
                         height="30px"
                         viewBox="0 0 249.316 249.316"
                         className="fill-current h-5 m-px xs:h-7 xs:m-1"
-                      >                        
-                        <path className="fill-[#f87979]" d="M124.663,0C55.919,0,0,55.924,0,124.652c0,68.744,55.919,124.663,124.663,124.663c68.733,0,124.652-55.924,124.652-124.663C249.316,55.919,193.397,0,124.663,0z M124.663,226.184c-55.995,0-101.542-45.547-101.542-101.531c0-55.99,45.547-101.531,101.542-101.531c55.984,0,101.526,45.547,101.526,101.531S180.648,226.184,124.663,226.184z"/>
-                        <path d="M104.419,87.145c-1.403-0.876-2.937-1.316-4.46-1.316c-2.04,0-4.079,0.783-5.798,2.312l-21.854,19.619c-1.202-0.702-2.594-1.137-4.085-1.137H49.316c-4.449,0-8.066,3.601-8.066,8.066v18.906c0,4.455,3.617,8.072,8.066,8.072h18.906c1.207,0,2.344-0.288,3.367-0.756l22.567,20.239c2.997,2.698,6.957,3.079,10.264,1.006c3.302-2.056,5.379-6.233,5.379-10.802V97.958C109.798,93.4,107.721,89.228,104.419,87.145z"/>
-                        <path d="M99.947,163.978L99.947,163.978c-2.222,0-4.34-0.85-6.126-2.459l-22.327-20.022c-1.067,0.444-2.167,0.669-3.272,0.669H49.316c-4.723,0-8.566-3.845-8.566-8.571v-18.906c0-4.724,3.843-8.566,8.566-8.566h18.906c1.37,0,2.751,0.354,4.017,1.026l21.588-19.38c1.77-1.574,3.947-2.439,6.132-2.439c1.632,0,3.266,0.481,4.725,1.392c3.464,2.186,5.615,6.491,5.615,11.237v53.396c0,4.769-2.151,9.07-5.615,11.227C103.224,163.494,101.585,163.978,99.947,163.978zM71.679,140.319l22.811,20.457c1.6,1.44,3.487,2.202,5.458,2.202c1.45,0,2.904-0.431,4.206-1.247c3.174-1.976,5.145-5.952,5.145-10.378V97.958c0-4.406-1.972-8.388-5.146-10.39c-1.298-0.81-2.749-1.239-4.193-1.239c-1.968,0-3.858,0.756-5.466,2.185L72.37,108.374l-0.315-0.184c-1.198-0.699-2.523-1.068-3.833-1.068H49.316c-4.172,0-7.566,3.394-7.566,7.566v18.906c0,4.175,3.394,7.571,7.566,7.571h18.906c1.065,0,2.128-0.239,3.159-0.711L71.679,140.319z"/>
-                        <path d="M155.595,164.069c-1.779,0-3.552-0.68-4.911-2.034c-2.709-2.714-2.709-7.109,0-9.823c15.197-15.191,15.191-39.917,0-55.109c-2.714-2.714-2.714-7.109,0-9.823c2.709-2.714,7.109-2.714,9.823,0c20.614,20.614,20.614,54.146,0.005,74.749C159.147,163.389,157.374,164.069,155.595,164.069z"/>
-                        <path d="M134.758,149.411c-1.779,0-3.557-0.68-4.911-2.034c-2.714-2.714-2.714-7.109,0-9.823c3.448-3.443,5.347-8.023,5.347-12.901c0-4.868-1.904-9.453-5.347-12.901c-2.714-2.714-2.714-7.109,0-9.823s7.114-2.714,9.823,0c6.07,6.07,9.41,14.142,9.41,22.719c0,8.588-3.34,16.654-9.41,22.724C138.31,148.731,136.531,149.411,134.758,149.411z"/>
-                        <path d="M176.432,183.188c-1.773,0-3.546-0.68-4.906-2.034c-2.714-2.714-2.714-7.109,0-9.823c12.466-12.466,19.33-29.034,19.33-46.673s-6.87-34.212-19.341-46.678c-2.709-2.714-2.709-7.109,0-9.823c2.72-2.714,7.114-2.714,9.828,0c15.093,15.093,23.404,35.153,23.404,56.501s-8.305,41.408-23.399,56.49C179.99,182.508,178.211,183.188,176.432,183.188z"/>
+                      >
+                        <path
+                          className="fill-[#f87979]"
+                          d="M124.663,0C55.919,0,0,55.924,0,124.652c0,68.744,55.919,124.663,124.663,124.663c68.733,0,124.652-55.924,124.652-124.663C249.316,55.919,193.397,0,124.663,0z M124.663,226.184c-55.995,0-101.542-45.547-101.542-101.531c0-55.99,45.547-101.531,101.542-101.531c55.984,0,101.526,45.547,101.526,101.531S180.648,226.184,124.663,226.184z"
+                        />
+                        <path d="M104.419,87.145c-1.403-0.876-2.937-1.316-4.46-1.316c-2.04,0-4.079,0.783-5.798,2.312l-21.854,19.619c-1.202-0.702-2.594-1.137-4.085-1.137H49.316c-4.449,0-8.066,3.601-8.066,8.066v18.906c0,4.455,3.617,8.072,8.066,8.072h18.906c1.207,0,2.344-0.288,3.367-0.756l22.567,20.239c2.997,2.698,6.957,3.079,10.264,1.006c3.302-2.056,5.379-6.233,5.379-10.802V97.958C109.798,93.4,107.721,89.228,104.419,87.145z" />
+                        <path d="M99.947,163.978L99.947,163.978c-2.222,0-4.34-0.85-6.126-2.459l-22.327-20.022c-1.067,0.444-2.167,0.669-3.272,0.669H49.316c-4.723,0-8.566-3.845-8.566-8.571v-18.906c0-4.724,3.843-8.566,8.566-8.566h18.906c1.37,0,2.751,0.354,4.017,1.026l21.588-19.38c1.77-1.574,3.947-2.439,6.132-2.439c1.632,0,3.266,0.481,4.725,1.392c3.464,2.186,5.615,6.491,5.615,11.237v53.396c0,4.769-2.151,9.07-5.615,11.227C103.224,163.494,101.585,163.978,99.947,163.978zM71.679,140.319l22.811,20.457c1.6,1.44,3.487,2.202,5.458,2.202c1.45,0,2.904-0.431,4.206-1.247c3.174-1.976,5.145-5.952,5.145-10.378V97.958c0-4.406-1.972-8.388-5.146-10.39c-1.298-0.81-2.749-1.239-4.193-1.239c-1.968,0-3.858,0.756-5.466,2.185L72.37,108.374l-0.315-0.184c-1.198-0.699-2.523-1.068-3.833-1.068H49.316c-4.172,0-7.566,3.394-7.566,7.566v18.906c0,4.175,3.394,7.571,7.566,7.571h18.906c1.065,0,2.128-0.239,3.159-0.711L71.679,140.319z" />
+                        <path d="M155.595,164.069c-1.779,0-3.552-0.68-4.911-2.034c-2.709-2.714-2.709-7.109,0-9.823c15.197-15.191,15.191-39.917,0-55.109c-2.714-2.714-2.714-7.109,0-9.823c2.709-2.714,7.109-2.714,9.823,0c20.614,20.614,20.614,54.146,0.005,74.749C159.147,163.389,157.374,164.069,155.595,164.069z" />
+                        <path d="M134.758,149.411c-1.779,0-3.557-0.68-4.911-2.034c-2.714-2.714-2.714-7.109,0-9.823c3.448-3.443,5.347-8.023,5.347-12.901c0-4.868-1.904-9.453-5.347-12.901c-2.714-2.714-2.714-7.109,0-9.823s7.114-2.714,9.823,0c6.07,6.07,9.41,14.142,9.41,22.719c0,8.588-3.34,16.654-9.41,22.724C138.31,148.731,136.531,149.411,134.758,149.411z" />
+                        <path d="M176.432,183.188c-1.773,0-3.546-0.68-4.906-2.034c-2.714-2.714-2.714-7.109,0-9.823c12.466-12.466,19.33-29.034,19.33-46.673s-6.87-34.212-19.341-46.678c-2.709-2.714-2.709-7.109,0-9.823c2.72-2.714,7.114-2.714,9.828,0c15.093,15.093,23.404,35.153,23.404,56.501s-8.305,41.408-23.399,56.49C179.99,182.508,178.211,183.188,176.432,183.188z" />
                       </svg>
                     </button>
                     <button
                       className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
-                      id="icon-edit"                      
+                      id="icon-edit"
                       onClick={() => navigate(`/Edit/${word.id}`)}
                     >
                       <svg
@@ -184,7 +190,7 @@ export function ListRecords() {
                     </button>
                     <button
                       className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
-                      id="icon-delete"                      
+                      id="icon-delete"
                       onClick={() => deleteEachWord(word)}
                     >
                       <svg

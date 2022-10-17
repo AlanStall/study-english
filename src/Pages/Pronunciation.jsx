@@ -997,9 +997,7 @@ export function Pronunciation() {
 
   return (
     <>
-      <div
-        className="min-h-screen"        
-      >
+      <div className="min-h-screen">
         <Header />
 
         <div className="card bg-base-100 shadow-xl m-2 p-2 h-96 sm:mx-20 sm:p-8 sm:h-80">
