@@ -7,7 +7,7 @@ export function Footer() {
       id="footer"
       className="footer footer-center gap-2 py-4 xs2:p-4 bg-base-200 text-base-content rounded"
     >
-      <div className="grid grid-flow-col gap-4">
+      <div className="grid grid-flow-col gap-2 text-[10px] sm:text-[12px]">
         <a
           className="link link-hover hover:text-[#b192f3]"
           target="_blank"
@@ -75,12 +75,12 @@ export function Footer() {
 
       <div className="info">
         <div className="grid grid-flow-col gap-1">
-          <p className="e-mail">alan_kstall@hotmail.com</p>
+          <p className="text-[12px] sm:text-[14px] flex self-center">alan_kstall@hotmail.com</p>
           <CopyToClipboard text="alan_kstall@hotmail.com">
-            <button className="btn btn-outline btn-sm mt-3 xs:btn-xs xs:mt-0">Copiar e-mail</button>
+            <button className="btn btn-outline btn-xs text-[9px] sm:text-[10px] pt-1 content-center">Copiar e-mail</button>
           </CopyToClipboard>
         </div>
-        <p className="developed">Copyright © 2022 - Desenvolvido por Alan Stall</p>
+        <p className="text-[10px] sm:text-[12px]">Copyright © 2022 - Desenvolvido por Alan Stall</p>
       </div>
     </footer>
   );

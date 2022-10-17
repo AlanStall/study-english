@@ -51,17 +51,18 @@ export function Edit() {
     <>
       <div className="min-h-screen">
         <Header />
-        <p className="pt-6">{status}</p>
-        <div className="pt-12">
+        <h1 className='font-bold text-[12px] sm:text-[16px] p-4'>EDITE SUAS PALAVRAS OU FRASES, EM INGLÊS E PORTUGUÊS</h1>
+        <p className="pt-2">{status}</p>
+        <div className="pt-2">
           <div className="form-control">
             <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-8">
-              <span className="font-bold text-[18px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
+              <span className="font-bold text-[12px] sm:text-[14px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
                 Em inglês:
               </span>
               <textarea
                 type="text"
                 placeholder="Digite aqui sua palavra ou frase…"
-                className="input input-bordered input-lg min-h-[80px] p-1 w-3/4 sm:p-2"
+                className="input input-bordered input-lg min-h-[80px] p-1 w-3/4 text-[12px] sm:p-2 sm:text-[14px]"
                 ref={inputEnglish}
                 onSelect={(ev) => setInEnglish(ev.target.value)}
               />
@@ -69,30 +70,30 @@ export function Edit() {
           </div>
           <div className="form-control">
             <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-8">
-              <span className="font-bold text-[18px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
+              <span className="font-bold text-[12px] sm:text-[14px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
                 Em português:
               </span>
               <textarea
                 type="text"
                 placeholder="Digite aqui sua palavra ou frase…"
-                className="input input-bordered input-lg min-h-[80px] p-1 w-3/4 sm:p-2"
+                className="input input-bordered input-lg min-h-[80px] p-1 w-3/4 text-[12px] sm:p-2 sm:text-[14px]"
                 ref={inputPortuguese}
                 onSelect={(ev) => setInPortuguese(ev.target.value)}
               />
             </label>
           </div>
           <div className="p-6">
-            <button className="btn btn-outline btn-success m-2 p-2" onClick={updateWords}>
+            <button className="btn btn-outline btn-success btn-xs sm:btn-sm lg:btn-md m-2 p-1" onClick={updateWords}>
               CONFIRMAR
             </button>
             <button
-              className="btn btn-outline btn-error m-2 p-2"
+              className="btn btn-outline btn-error btn-xs sm:btn-sm lg:btn-md m-2 p-1"
               onClick={() => navigate('/ListRecords')}
             >
               CANCELAR
             </button>
             <button
-              className="btn btn-outline btn-info m-2 p-2"
+              className="btn btn-outline btn-info btn-xs sm:btn-sm lg:btn-md m-2 p-1"
               onClick={() => navigate('/ListRecords')}
             >
               MINHA LISTA

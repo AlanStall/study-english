@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../db';
 import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
+import { IconInputSearch } from '../Components/IconInputSearch';
+
+
+
 
 export function StudyNotRandom() {
   const [wordsNotRandom, setWordsNotRandom] = useState('');
@@ -23,44 +27,8 @@ export function StudyNotRandom() {
     setIndex(1);
     setDisplayRecords(wordsPhrases.length);
 
-    /* for(let i = 0; i < wordsPhrases.length; i++){        
-        console.log(`${i+1}. ${wordsPhrases[i].inEnglish}`)
-
-        console.log(i);
-        if(wordsPhrases[i-1].inEnglish == "caderno" ) {
-            console.log(i);
-        }
-      } */
-
-    /* let teste = wordsPhrases.findIndex(checkCurrentIndex);
-    let teste03 = wordsPhrases.map((element, key)=> );
-    let teste02 = Object.values(wordsNotRandom);
-
-    function checkCurrentIndex(element, index, array){
-        return element === wordsNotRandom
-    }
-    console.log(teste);
-    console.log(teste02); */
-
-    /* const array1 = wordsPhrases */
-    /* const wordsPhrases02 = await db.wordsAndPhrases.toArray();
-    const isLargeNumber = (element) => element === "caderno"; */
-    /* console.log(wordsPhrases02.findIndex(isLargeNumber)+1); */
-
-    /* const array2 = wordsPhrases.inEnglish[2]; */
-    /* console.log(array2.findIndex(isLargeNumber2)+1);   */
-
-    /* const array1 = [5, 12, 8, 130, 44, , , , , 50, , , ,26];
-    const isLargeNumber2 = (element) => element === 26;
-    console.log(array1.findIndex(isLargeNumber2)+1); */
-
-    /* console.log(wordsPhrases.inEnglish); */
-    /* console.log(wordsPhrases02.findIndex(isLargeNumber)); */
-
     return wordsPhrases;
   });
-
-  /* console.log(wordsPhrases[index-1].inEnglish); */
 
   function sleep(ms) {
     return new Promise((result) => setTimeout(result, ms));
@@ -203,16 +171,16 @@ export function StudyNotRandom() {
           <div>
             <h2 className="font-bold text-[14px] xs:text-[24px]">MINHA LISTA</h2>
             <p className="text-[10px] xs:text-[14px] xs:font-bold">{`Itens adicionados:`}</p>
-            <p className="font-bold text-[#570DF8] text-[12px] xs:text-[16px] sm:text-[20px] lg:text-[24px]">{`${displayRecords}`}</p>
+            <p className="font-bold text-blue-300 text-[12px] xs:text-[16px] sm:text-[20px] lg:text-[24px]">{`${displayRecords}`}</p>
             <h4 className="text-[10px] xs:text-[14px] xs:font-bold lg:text-[16px]">
               Veja cada palavra de forma crescente ou decrescente:
             </h4>
             <div className="form-control">
-              <div className="input-group">
+              <div className="input-group my-4">
                 <input
                   type="text"
                   placeholder="Procure pelo nº de registro"
-                  className="input input-bordered ml-auto p-1 h-6 w-24 text-[12px] xs2:w-44 xs:h-8"
+                  className="input input-bordered ml-auto p-1 h-6 w-36 text-[10px] md:text-[12px] xs2:w-44 xs:h-8"
                   id="find-number-random"
                   onChange={(e) => setIndex(Number(e.target.value))}
                   onKeyPress={handleKeyPressInputNumber}
@@ -221,20 +189,7 @@ export function StudyNotRandom() {
                   className="btn btn-xs mr-auto m-0 xs:btn-sm"
                   onClick={findNumberAndClearInput}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="m-0 p-0 h-5 w-7 xs:p-0.5 xs:h-5 xs:w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
+                  <IconInputSearch/>
                 </button>
               </div>
             </div>
@@ -251,35 +206,22 @@ export function StudyNotRandom() {
             </h2>
             {mostrarAlert && (
               <div className="flex justify-center m-8">
-                <div className="alert shadow-lg bg-gray-200 w-9/12">
+                <div className="alert shadow-lg bg-gray-200 w-12/12 sm:w-10/12 text-[12px]">
                   <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      className="stroke-info flex-shrink-0 w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span className="text-[blue]">{mensagemDelete}</span>
+                    <span className="font-bold text-blue-900">{mensagemDelete}</span>
                   </div>
                   <div className="flex-none">
                     <button
-                      className="btn btn-sm btn-primary"
+                      className="btn btn-xs lg:btn-sm btn-primary"
                       onClick={() => setMostrarAlert(!mostrarAlert)}
                     >
-                      Cancel
+                      Cancelar
                     </button>
                     <button
-                      className="btn btn-sm btn-primary"
+                      className="btn btn-xs lg:btn-sm btn-primary"
                       onClick={() => deleteWords(wordsNotRandom)}
                     >
-                      Confirm
+                      Confirmar
                     </button>
                   </div>
                 </div>
@@ -347,49 +289,3 @@ export function StudyNotRandom() {
   );
 }
 
-/* import React, { useState } from "react";
-import "./style.css";
-
-const Input = ({}) => {
-  const [val, setVal] = useState("");
-
-  const handleTrack = () => {
-    if (val.length !== 0) {
-      // Do something with value
-      console.log("got this:", val);
-    }
-  };
-
-  const handleKeyPress = e => {
-    if (e.key === "Enter") {
-      handleTrack();
-    }
-  };
-
-  return (
-    <div>
-      <input
-        value={val}
-        onChange={e => {
-          setVal(e.target.value);
-        }}
-        onKeyPress={handleKeyPress}
-      />
-      <button
-        onClick={() => {
-          handleTrack();
-        }}
-      >
-        Click
-      </button>
-    </div>
-  );
-};
-
-export default function App() {
-  return (
-    <div>
-      <Input />
-    </div>
-  );
-} */

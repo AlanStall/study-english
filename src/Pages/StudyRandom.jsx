@@ -95,7 +95,7 @@ export function StudyRandom() {
           <div>
             <h2 className="font-bold text-[14px] xs:text-[24px]">MINHA LISTA</h2>
             <p className="text-[10px] xs:text-[14px] xs:font-bold">{`Itens adicionados:`}</p>
-            <p className="font-bold text-[#570DF8] text-[12px] xs:text-[16px] sm:text-[20px] lg:text-[24px]">{`${displayRecords}`}</p>
+            <p className="font-bold text-blue-300 text-[12px] xs:text-[16px] sm:text-[20px] lg:text-[24px]">{`${displayRecords}`}</p>
             <h4 className="text-[10px] xs:pt-3 xs:text-[14px] xs:font-bold lg:text-[16px]">
               Veja cada palavra de forma aleatória:
             </h4>
@@ -110,35 +110,22 @@ export function StudyRandom() {
             </h2>
             {mostrarAlert && (
               <div className="flex justify-center m-8">
-                <div className="alert shadow-lg bg-gray-200 w-9/12">
+                <div className="alert shadow-lg bg-gray-200 w-12/12 sm:w-10/12 text-[12px]">
                   <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      className="stroke-info flex-shrink-0 w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span className="text-[blue]">{mensagemDelete}</span>
+                    <span className="font-bold text-blue-900">{mensagemDelete}</span>
                   </div>
                   <div className="flex-none">
                     <button
-                      className="btn btn-sm btn-primary"
+                      className="btn btn-xs lg:btn-sm btn-primary"
                       onClick={() => setMostrarAlert(!mostrarAlert)}
                     >
-                      Cancel
+                      Cancelar
                     </button>
                     <button
-                      className="btn btn-sm btn-primary"
-                      onClick={() => deleteWords(wordsRandom)}
+                      className="btn btn-xs lg:btn-sm btn-primary"
+                      onClick={() => deleteWords(wordsNotRandom)}
                     >
-                      Confirm
+                      Confirmar
                     </button>
                   </div>
                 </div>
