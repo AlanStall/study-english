@@ -89,7 +89,7 @@ export function StudyRandom() {
 
   return (
     <>
-      <section className="min-h-screen pb-0.5 xs:pb-6 overscroll-auto">
+      <section className="min-h-screen pb-0.5 overscroll-auto xs:pb-6">
         <Header />
         <div className="card bg-base-100 shadow-xl m-2 tracking-wider xs2:my-4 xs2:py-4 sm:mx-10 lg:mx-32">
           <div>
@@ -100,7 +100,7 @@ export function StudyRandom() {
               Veja cada palavra de forma aleatória:
             </h4>
             <br></br>
-            <h2 className="font-bold text-[12px] m-2 xs:text-[16px] lg:text-[24px]">
+            <h2 className="font-bold my-6 text-[10px] xs:text-[12px] lg:text-[20px]">
               {`${wordsRandom.inEnglish === undefined ? '' : wordsRandom.inEnglish}`}
               {translateRandom && (
                 <a>
@@ -110,20 +110,20 @@ export function StudyRandom() {
             </h2>
             {mostrarAlert && (
               <div className="flex justify-center m-8">
-                <div className="alert shadow-lg bg-gray-200 w-12/12 sm:w-10/12 text-[12px]">
+                <div className="alert shadow-lg bg-gray-200 text-[12px] w-12/12 sm:w-10/12">
                   <div>
                     <span className="font-bold text-blue-900">{mensagemDelete}</span>
                   </div>
                   <div className="flex-none">
                     <button
-                      className="btn btn-xs lg:btn-sm btn-primary"
+                      className="btn btn-xs btn-error lg:btn-sm"
                       onClick={() => setMostrarAlert(!mostrarAlert)}
                     >
                       Cancelar
                     </button>
                     <button
-                      className="btn btn-xs lg:btn-sm btn-primary"
-                      onClick={() => deleteWords(wordsNotRandom)}
+                      className="btn btn-xs btn-secondary lg:btn-sm"
+                      onClick={() => deleteWords(wordsRandom)}
                     >
                       Confirmar
                     </button>
@@ -134,38 +134,35 @@ export function StudyRandom() {
             <br></br>
             <div>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={captureRandomWord}
               >
                 Outra palavra
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={listenWordRandomUser}
                 disabled={disabledRandom}
               >
                 Ouvir
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={() => setTranslateRandom(!translateRandom)}
               >
                 Tradução
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={editWordsRandom}
               >
                 Editar
               </button>
-              <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
-                onClick={alertDelete}
-              >
+              <button className="btn btn-xs btn-outline btn-info lg:btn-md" onClick={alertDelete}>
                 Deletar
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={() => navigate('/add')}
               >
                 ADICIONAR

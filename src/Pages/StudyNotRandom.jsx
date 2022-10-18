@@ -6,9 +6,6 @@ import { Header } from '../Components/Header';
 import { Footer } from '../Components/Footer';
 import { IconInputSearch } from '../Components/IconInputSearch';
 
-
-
-
 export function StudyNotRandom() {
   const [wordsNotRandom, setWordsNotRandom] = useState('');
   const [index, setIndex] = useState(0);
@@ -167,7 +164,7 @@ export function StudyNotRandom() {
       <section className="min-h-screen min-w-[100%] pb-0.5 xs:pb-6">
         <Header />
 
-        <div className="card bg-base-100 shadow-xl m-2 tracking-wider xs2:my-4 xs2:py-4 sm:mx-10 lg:mx-32">
+        <div className="card bg-base-100 shadow-xl tracking-wider m-2 xs2:my-4 xs2:py-4 sm:mx-10 lg:mx-32">
           <div>
             <h2 className="font-bold text-[14px] xs:text-[24px]">MINHA LISTA</h2>
             <p className="text-[10px] xs:text-[14px] xs:font-bold">{`Itens adicionados:`}</p>
@@ -180,7 +177,7 @@ export function StudyNotRandom() {
                 <input
                   type="text"
                   placeholder="Procure pelo nº de registro"
-                  className="input input-bordered ml-auto p-1 h-6 w-36 text-[10px] md:text-[12px] xs2:w-44 xs:h-8"
+                  className="input input-bordered ml-auto p-1 h-6 w-36 text-[10px] xs2:w-44 xs:h-8 md:text-[12px]"
                   id="find-number-random"
                   onChange={(e) => setIndex(Number(e.target.value))}
                   onKeyPress={handleKeyPressInputNumber}
@@ -189,12 +186,12 @@ export function StudyNotRandom() {
                   className="btn btn-xs mr-auto m-0 xs:btn-sm"
                   onClick={findNumberAndClearInput}
                 >
-                  <IconInputSearch/>
+                  <IconInputSearch />
                 </button>
               </div>
             </div>
 
-            <h2 className="font-bold text-[12px] m-2 xs:text-[16px] lg:text-[24px]">
+            <h2 className="font-bold my-6 text-[10px] xs:text-[12px] lg:text-[20px]">
               {wordsNotRandom.inEnglish === undefined ? '' : wordsNotRandom.inEnglish}
               {translateNotRandom && (
                 <a>
@@ -206,19 +203,19 @@ export function StudyNotRandom() {
             </h2>
             {mostrarAlert && (
               <div className="flex justify-center m-8">
-                <div className="alert shadow-lg bg-gray-200 w-12/12 sm:w-10/12 text-[12px]">
+                <div className="alert shadow-lg bg-gray-200 text-[12px] w-12/12 sm:w-10/12">
                   <div>
                     <span className="font-bold text-blue-900">{mensagemDelete}</span>
                   </div>
                   <div className="flex-none">
                     <button
-                      className="btn btn-xs lg:btn-sm btn-primary"
+                      className="btn btn-xs btn-error lg:btn-sm"
                       onClick={() => setMostrarAlert(!mostrarAlert)}
                     >
                       Cancelar
                     </button>
                     <button
-                      className="btn btn-xs lg:btn-sm btn-primary"
+                      className="btn btn-xs btn-secondary lg:btn-sm"
                       onClick={() => deleteWords(wordsNotRandom)}
                     >
                       Confirmar
@@ -229,50 +226,47 @@ export function StudyNotRandom() {
             )}
             <div>
               <button
-                className="btn btn-xs h-8 btn-outline btn-primary xs2:h-6 lg:btn-md"
+                className="btn btn-xs h-8 btn-outline btn-info xs2:h-6 lg:btn-md"
                 onClick={first}
               >
                 Primeira palavra
               </button>
               <button
-                className="btn btn-xs w-10 btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs w-10 btn-outline btn-info lg:btn-md"
                 onClick={descendingOrder}
               >
                 -
               </button>
               <button
-                className="btn btn-xs w-10 btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs w-10 btn-outline btn-info lg:btn-md"
                 onClick={ascendingOrder}
               >
                 +
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={listenWordUserNotRandom}
                 disabled={DisabledNotRandom}
               >
                 Ouvir
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={() => setTranslateNotRandom(!translateNotRandom)}
               >
                 Tradução
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={editWordsNotRandom}
               >
                 Editar
               </button>
-              <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
-                onClick={alertDelete}
-              >
+              <button className="btn btn-xs btn-outline btn-info lg:btn-md" onClick={alertDelete}>
                 Deletar
               </button>
               <button
-                className="btn btn-xs btn-outline btn-primary lg:btn-md"
+                className="btn btn-xs btn-outline btn-info lg:btn-md"
                 onClick={() => navigate('/add')}
               >
                 ADICIONAR
@@ -288,4 +282,3 @@ export function StudyNotRandom() {
     </>
   );
 }
-

@@ -51,12 +51,14 @@ export function Edit() {
     <>
       <div className="min-h-screen">
         <Header />
-        <h1 className='font-bold text-[12px] sm:text-[16px] p-4'>EDITE SUAS PALAVRAS OU FRASES, EM INGLÊS E PORTUGUÊS</h1>
+        <h1 className="font-bold p-4 text-[12px] sm:text-[16px]">
+          EDITE SUAS PALAVRAS OU FRASES, EM INGLÊS E PORTUGUÊS
+        </h1>
         <p className="pt-2">{status}</p>
         <div className="pt-2">
           <div className="form-control">
             <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-8">
-              <span className="font-bold text-[12px] sm:text-[14px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
+              <span className="font-bold tracking-wider p-1 w-20 text-[12px] sm:text-[14px] xs2:w-28 sm:w-1/4 sm:p-3">
                 Em inglês:
               </span>
               <textarea
@@ -70,7 +72,7 @@ export function Edit() {
           </div>
           <div className="form-control">
             <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-8">
-              <span className="font-bold text-[12px] sm:text-[14px] tracking-wider p-px w-20 xxs:p-1 xs2:w-28 sm:w-1/4 sm:p-3">
+              <span className="font-bold tracking-wider p-px w-20 p-1 text-[12px] sm:text-[14px] xs2:w-28 sm:w-1/4 sm:p-3">
                 Em português:
               </span>
               <textarea
@@ -83,17 +85,20 @@ export function Edit() {
             </label>
           </div>
           <div className="p-6">
-            <button className="btn btn-outline btn-success btn-xs sm:btn-sm lg:btn-md m-2 p-1" onClick={updateWords}>
+            <button
+              className="btn btn-outline btn-success btn-xs m-2 p-1 sm:btn-sm lg:btn-md"
+              onClick={updateWords}
+            >
               CONFIRMAR
             </button>
             <button
-              className="btn btn-outline btn-error btn-xs sm:btn-sm lg:btn-md m-2 p-1"
+              className="btn btn-outline btn-error btn-xs m-2 p-1 sm:btn-sm lg:btn-md"
               onClick={() => navigate('/ListRecords')}
             >
               CANCELAR
             </button>
             <button
-              className="btn btn-outline btn-info btn-xs sm:btn-sm lg:btn-md m-2 p-1"
+              className="btn btn-outline btn-info btn-xs m-2 p-1 sm:btn-sm lg:btn-md"
               onClick={() => navigate('/ListRecords')}
             >
               MINHA LISTA

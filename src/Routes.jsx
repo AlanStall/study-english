@@ -14,7 +14,7 @@ function AllRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Add" element={<Add />} />
-      <Route path="/Edit/:id" element={<Edit />} />            
+      <Route path="/Edit/:id" element={<Edit />} />
       <Route path="/ListRecords" element={<ListRecords />} />
       <Route path="/StudyRandom" element={<StudyRandom />} />
       <Route path="/StudyNotRandom" element={<StudyNotRandom />} />

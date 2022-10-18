@@ -9,11 +9,6 @@ import { IconListening } from '../Components/IconListening';
 import { IconEdit } from '../Components/IconEdit';
 import { IconDelete } from '../Components/IconDelete';
 
-
-
-
-
-
 export function ListRecords() {
   const [index, setIndex] = useState(0);
   const [wordByWord, setWordByWord] = useState([]);
@@ -91,24 +86,24 @@ export function ListRecords() {
           <table className="table-fixed w-full shadow-xl tracking-wide">
             <thead className="p-3">
               <tr>
-                <th className="pb-0 text-[#570DF8] font-bold text-[10px] xs:text-[12px] ssm:text-[14px]">
+                <th className="pb-0 text-blue-600 font-bold text-[10px] xs:text-[12px] ssm:text-[14px]">
                   EM INGLÊS
                 </th>
-                <th className="pb-[20px] text-[#570DF8] font-bold text-[10px] xs:text-[12px] ssm:text-[14px]">
+                <th className="pb-[20px] text-blue-600 font-bold text-[10px] xs:text-[12px] ssm:text-[14px]">
                   EM PORTUGUÊS
                   <button
-                    className="btn-outline btn-primary relative left-[0px] top-[10px] rounded"
+                    className="btn-outline btn-secondary relative left-[0px] top-[11px] rounded"
                     id="icon-translation"
-                    data-theme="light"
+                    data-theme="emerald"
                     onClick={() => setAllWords(!allWords)}
                   >
-                    <IconTranslation/>
+                    <IconTranslation />
                   </button>
                 </th>
                 <th className="pb-3 sm:w-3/12 md:w-2/12"></th>
               </tr>
             </thead>
-            <tbody data-theme="light">
+            <tbody data-theme="emerald">
               {wordByWord?.map((word) => (
                 <tr className="bg-gray-100 hover:bg-gray-300" key={word.id}>
                   <td className="border-solid border-2 break-words p-1 leading-relaxed text-[10px] xs2:font-bold xs:text-[12px] ssm:text-[14px]">
@@ -134,33 +129,33 @@ export function ListRecords() {
                   </td>
                   <td className="buttons-line border-solid border-2">
                     <button
-                      className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
+                      className="btn-outline btn-secondary relative top-[4px] m-0 p-0 rounded"
                       id="icon-translation"
                       onClick={() => showEachWord(word)}
                     >
-                      <IconTranslation/>
+                      <IconTranslation />
                     </button>
                     <button
-                      className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
+                      className="btn-outline btn-secondary relative top-[4px] m-0 p-0 rounded"
                       id="icon-listening"
                       disabled={disabled}
                       onClick={() => listenWord(word)}
                     >
-                      <IconListening/>
+                      <IconListening />
                     </button>
                     <button
-                      className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
+                      className="btn-outline btn-secondary relative top-[4px] m-0 p-0 rounded"
                       id="icon-edit"
                       onClick={() => navigate(`/Edit/${word.id}`)}
                     >
-                      <IconEdit/>
+                      <IconEdit />
                     </button>
                     <button
-                      className="btn-outline btn-primary relative top-[4px] m-0 p-0 rounded"
+                      className="btn-outline btn-secondary relative top-[4px] m-0 p-0 rounded"
                       id="icon-delete"
                       onClick={() => deleteEachWord(word)}
                     >
-                      <IconDelete/>                      
+                      <IconDelete />
                     </button>
                   </td>
                 </tr>
