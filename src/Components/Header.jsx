@@ -25,7 +25,7 @@ export function Header() {
           <div className="">
             <div className="dropdown dropdown-right">
               <label tabIndex={0}>
-                <AiOutlineMenuUnfold className="btn btn-ghost p-0.5 w-12 fill-[#ffffff] rounded-xl" size={'30px'} x="0px" y="0px"/>
+                <AiOutlineMenuUnfold className="btn btn-ghost pt-2 p-0.5 w-12 fill-[#ffffff] rounded-xl" size={'30px'} x="0px" y="0px"/>
               </label>
               <ul tabIndex={0} className="menu menu-compact dropdown-content bg-blue-600 rounded-box">
                 <li><button className='btn btn-ghost btn-xs normal-case content-center py-6 text-[7px] w-[120px] xs:text-[10px] xs:w-[150px] sm:py-4 sm:text-[10px] sm:w-[300px]' onClick={() => navigate('/Add')}>ADICIONAR</button></li>
