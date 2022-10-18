@@ -24,8 +24,8 @@ export function Header() {
 
             <div className="dropdown dropdown-right">
 
-              <label tabIndex={0} className="btn btn-ghost p-1 w-10">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="3 0 20 20" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+              <label tabIndex={0} className="btn btn-ghost p-0.5 w-10">
+                <svg className='pr-1' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
               </label>
 
               <ul tabIndex={0} className="menu menu-compact dropdown-content bg-blue-600 rounded-box">

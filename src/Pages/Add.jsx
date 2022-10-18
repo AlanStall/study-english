@@ -38,7 +38,7 @@ export function Add() {
         <h1 className="font-bold p-4 text-[12px] sm:text-[16px]">
           ADICIONE SUAS PALAVRAS OU FRASES, EM INGLÊS E PORTUGUÊS
         </h1>
-        <p className="pt-2">{status}</p>
+        <p className="pt-2 px-4">{status}</p>
         <div className="pt-2">
           <div className="form-control">
             <label className="justify-center input-group input-group-lg p-2 sm:px-8 lg:p-8">

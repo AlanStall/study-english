@@ -35,17 +35,17 @@ export function Home() {
               <h3 className="font-bold text-[18px] text-[#ffffff] tracking-[.30em]">
                 Como funciona!
               </h3>
-              <div className="py-1 leading-[3rem]">
+              <div className="py-1 leading-loose">
                 Você adiciona suas palavras ou frases em inglês e também em português, e pode
                 estudá-las em
-                <p className="btn btn-outline btn-info btn-xs text-[#000000] text-[10px] mx-0.5 px-4">MINHA LISTA</p>
+                <p className="btn btn-outline btn-info btn-xs text-[#000000] mx-0.5">MINHA LISTA</p>
                 , ou uma a uma de forma aleatória em
-                <p className="btn btn-outline btn-info btn-xs text-[#000000] text-[10px] relative bottom-2  leading-relaxed mx-0.5 p-0.5 px-4 h-10">
-                  ESTUDAR SORTEANDO<br></br>AS PALAVRAS E FRASES
+                <p className="btn btn-outline btn-info btn-xs text-[#000000] mx-0.5">
+                  ESTUDAR SORTEANDO AS PALAVRAS E FRASES
                 </p>
                 , ou uma a uma pela ordem de cadastro que você adicionou, em
-                <p className="btn btn-outline btn-info btn-xs text-[#000000] text-[10px] relative bottom-2  leading-relaxed mx-0.5 p-0.5 px-4 h-10">
-                  ESTUDAR PELA<br></br>ORDEM DE CADASTRO
+                <p className="btn btn-outline btn-info btn-xs text-[#000000] mx-0.5">
+                  ESTUDAR PELA ORDEM DE CADASTRO
                 </p>
                 ;
               </div>

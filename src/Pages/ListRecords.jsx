@@ -164,9 +164,9 @@ export function ListRecords() {
           </table>
         </div>
       </section>
-      <div className="tall:absolute inset-x-0 bottom-0">
-        <Footer />
-      </div>
+      
+      <Footer />
+      
     </>
   );
 }

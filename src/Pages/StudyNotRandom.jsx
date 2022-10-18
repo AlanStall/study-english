@@ -41,7 +41,7 @@ export function StudyNotRandom() {
       .equals(word.id)
       .delete()
       .then(function (deleteCount) {
-        alert('Foi deletado' + deleteCount + ' item: ' + word.inEnglish);
+        alert('Foi deletado ' + deleteCount + ' item: ' + word.inEnglish);
         setMostrarAlert(!mostrarAlert);
       });
   }
@@ -166,10 +166,10 @@ export function StudyNotRandom() {
 
         <div className="card bg-base-100 shadow-xl tracking-wider m-2 xs2:my-4 xs2:py-4 sm:mx-10 lg:mx-32">
           <div>
-            <h2 className="font-bold text-[14px] xs:text-[24px]">MINHA LISTA</h2>
+            <h2 className="font-bold text-[14px] xs:text-[16px]">MINHA LISTA</h2>
             <p className="text-[10px] xs:text-[14px] xs:font-bold">{`Itens adicionados:`}</p>
             <p className="font-bold text-blue-300 text-[12px] xs:text-[16px] sm:text-[20px] lg:text-[24px]">{`${displayRecords}`}</p>
-            <h4 className="text-[10px] xs:text-[14px] xs:font-bold lg:text-[16px]">
+            <h4 className="text-[10px] xs:text-[16px] xs:font-bold xs:pt-3 lg:text-[20px]">
               Veja cada palavra de forma crescente ou decrescente:
             </h4>
             <div className="form-control">
