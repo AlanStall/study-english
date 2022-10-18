@@ -79,9 +79,9 @@ export function ListRecords() {
         <h1 className="font-bold text-[#ffffff] py-4 tracking-[.20em] text-[14px] sm:text-[18px]">
           LISTA COMPLETA
         </h1>
-        <h1 className="font-bold text-[#ffffff] pb-4 tracking-widest text-[14px] sm:text-[18px]">
+        <h2 className="font-bold text-[#ffffff] pb-4 tracking-widest text-[14px] sm:text-[18px]">
           Itens adicionados: {displayRecords}
-        </h1>
+        </h2>
         <div className="overflow-x-auto bg-gray-300 rounded-xl py-3 pb-6 p-1 sm:pt-0 sm:p-8">
           <table className="table-fixed w-full shadow-xl tracking-wide">
             <thead className="p-3">
@@ -164,7 +164,9 @@ export function ListRecords() {
           </table>
         </div>
       </section>
-      <Footer />
+      <div className="tall:absolute inset-x-0 bottom-0">
+        <Footer />
+      </div>
     </>
   );
 }

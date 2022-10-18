@@ -29,7 +29,5 @@ code {
 button {
   padding: 2px 5px 2px 5px;
   margin: 2px;
-  cursor: pointer;
-  background-color: #b192f3;
-  color: #e7e7e7;
+  cursor: pointer;  
 }

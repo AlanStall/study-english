@@ -18,7 +18,12 @@ function AllRoutes() {
       <Route path="/ListRecords" element={<ListRecords />} />
       <Route path="/StudyRandom" element={<StudyRandom />} />
       <Route path="/StudyNotRandom" element={<StudyNotRandom />} />
-      <Route path="*" element={<h3>Not Found</h3>} />
+      <Route path="/*" 
+        element={
+          <div className='text-[40px]'><br></br>Not Found<br></br>
+            <a href='https://study-english.alanstall.com/' className='btn btn-sm btn-info'>VOLTAR AO MENU</a>
+          </div>          
+        } />
     </Routes>
   );
 }
