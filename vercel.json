@@ -1,0 +1,12 @@
+{  
+
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/Add", "dest": "/" },
+    { "src": "/Edit/:id", "dest": "/" },
+    { "src": "/ListRecords", "dest": "/" },
+    { "src": "/StudyRandom", "dest": "/" },
+    { "src": "/StudyNotRandom", "dest": "/" },
+    { "src": "/*", "dest": "/" }
+  ]
+}
