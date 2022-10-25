@@ -9,13 +9,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        app: './main.html',
+        app: './index.html',
       },
     },    
   },
  
   server: {
-    open: '/main.html',
+    open: '/index.html',
   },
   
   /* devServer: {
