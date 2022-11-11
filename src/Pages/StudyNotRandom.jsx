@@ -123,7 +123,7 @@ export function StudyNotRandom() {
       setIndex(index - 1);
       wordDescending = wordsPhrases[index - 1];
     } else {
-      setIndex(0);
+      setIndex(1);
       wordDescending = wordsPhrases[index];
     }
     setWordsNotRandom(wordDescending);
@@ -170,7 +170,7 @@ export function StudyNotRandom() {
             <p className="text-[10px] xs:text-[14px] xs:font-bold">{`Itens adicionados:`}</p>
             <p className="font-bold text-blue-300 text-[12px] xs:text-[16px] sm:text-[20px] lg:text-[24px]">{`${displayRecords}`}</p>
             <h4 className="text-[10px] xs:text-[16px] xs:font-bold xs:pt-3 lg:text-[20px]">
-              Veja cada palavra de forma crescente ou decrescente:
+              Veja cada palavra na ordem crescente ou decrescente:
             </h4>
             <div className="form-control">
               <div className="input-group my-4">
