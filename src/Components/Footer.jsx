@@ -7,21 +7,7 @@ export function Footer() {
       id="footer"
       className="footer footer-center gap-2 py-4 xs2:p-4 bg-base-200 text-base-content rounded"
     >
-      <div className="grid grid-flow-col gap-2 text-[10px] sm:text-[12px]">
-        <a
-          className="link link-hover hover:text-blue-400"
-          target="_blank"
-          href="https://github.com/AlanStall"
-        >
-          Desenvolvedor
-        </a>
-        <a
-          className="link link-hover hover:text-blue-400"
-          target="_blank"
-          href="https://www.linkedin.com/in/alan-stall-b722a962/"
-        >
-          Contato
-        </a>
+      <div className="grid grid-flow-col gap-2 text-[10px] sm:text-[12px]">        
         <a
           className="link link-hover hover:text-blue-400"
           target="_blank"
@@ -35,6 +21,13 @@ export function Footer() {
           href="/Alan_Stall-Curriculo-2022.pdf"
         >
           Currículo
+        </a>
+        <a
+          className="link link-hover hover:text-blue-400"
+          target="_blank"
+          href="https://portfolio.alanstall.com/"
+        >
+          Portfólio
         </a>
       </div>
 
