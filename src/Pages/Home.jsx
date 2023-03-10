@@ -25,7 +25,7 @@ export function Home() {
               htmlFor="my-modal-6"
               className="btn btn-active btn-info btn-sm modal-button animate-pulse text-[10px] w-12 w-32 xs:w-40 xs:text-[10px] sm:text-[12px]"
             >
-              Como funciona!!!
+              Como funciona!
             </label>
           </div>
 
@@ -33,7 +33,7 @@ export function Home() {
           <div className="modal modal-bottom modal-middle" data-theme="dark">
             <div className="modal-box text-[15px]">
               <h3 className="font-bold text-[18px] text-[#ffffff] tracking-[.30em]">
-                Como funciona!!!
+                Como funciona!
               </h3>
               <div className="py-1 leading-loose">
                 Você adiciona suas palavras ou frases em inglês e também em português, e pode
