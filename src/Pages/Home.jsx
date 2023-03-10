@@ -33,7 +33,7 @@ export function Home() {
           <div className="modal modal-bottom modal-middle" data-theme="dark">
             <div className="modal-box text-[15px]">
               <h3 className="font-bold text-[18px] text-[#ffffff] tracking-[.30em]">
-                Como funciona!
+                Como funciona!!!
               </h3>
               <div className="py-1 leading-loose">
                 Você adiciona suas palavras ou frases em inglês e também em português, e pode
