@@ -25,7 +25,7 @@ export function Home() {
               htmlFor="my-modal-6"
               className="btn btn-active btn-info btn-sm modal-button animate-pulse text-[10px] w-12 w-32 xs:w-40 xs:text-[10px] sm:text-[12px]"
             >
-              Como funciona!
+              Como funciona!!!
             </label>
           </div>
 
