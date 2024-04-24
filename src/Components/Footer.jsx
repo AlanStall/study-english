@@ -18,13 +18,6 @@ export function Footer() {
         <a
           className="link link-hover hover:text-blue-400"
           target="_blank"
-          href="/Alan_Stall-Curriculo-2022.pdf"
-        >
-          Currículo
-        </a>
-        <a
-          className="link link-hover hover:text-blue-400"
-          target="_blank"
           href="https://portfolio.alanstall.com/"
         >
           Portfólio
